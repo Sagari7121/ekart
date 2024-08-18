@@ -4,16 +4,12 @@ import { createSlice } from "@reduxjs/toolkit";
 
 // Helper functions to handle localStorage
 const saveCartToLocalStorage = (cart) => {
-	if (typeof window !== "undefined") {
-		localStorage.setItem("cart", JSON.stringify(cart));
-	}
+	localStorage.setItem("cart", JSON.stringify(cart));
 };
 
 const loadCartFromLocalStorage = () => {
-	if (typeof window !== "undefined") {
-		const savedCart = localStorage.getItem("cart");
-		return savedCart ? JSON.parse(savedCart) : [];
-	}
+	const savedCart = localStorage.getItem("cart");
+	return savedCart ? JSON.parse(savedCart) : [];
 };
 
 const cartSlice = createSlice({
